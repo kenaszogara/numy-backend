@@ -4,12 +4,13 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
+require("dotenv").config();
 
 const indexRouter = require("./routes/index");
 const apiRouter = require("./routes/api");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT ? process.env.PORT : 5000;
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
